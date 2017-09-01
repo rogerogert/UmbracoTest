@@ -1,0 +1,163 @@
+﻿@using umbraco.cms.businesslogic.web;
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = null;
+	var site = CurrentPage.Site();
+	var hostName = Domain.GetDomainsById(site.id)[0].Name;
+}
+
+<!DOCTYPE html>
+<html id="ng-app" ng-app="eAssinatura" ng-strict-di lang="pt">
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width,height=device-height">
+    @if(site.smartBannerEnabled){
+    <!-- Start smartBanner configuration -->
+    <meta name="smartbanner:title" content="@Umbraco.Field("smartBannerAppTitle")">
+    <meta name="smartbanner:author" content="Certisign Certificadora Digital">
+    <meta name="smartbanner:price" content="@Umbraco.Field("smartBannerPrice") ">
+    <meta name="smartbanner:price-suffix-apple" content="- @Umbraco.Field("smartBannerPriceSuffixApple")">
+    <meta name="smartbanner:price-suffix-google" content="- @Umbraco.Field("smartBannerPriceSuffixAndroid")">
+    <meta name="smartbanner:button" content="@Umbraco.Field("smartBannerGoToStore")">
+    <meta name="smartbanner:button-url-apple" content="https://itunes.apple.com/us/app/certisign-signapp/id1200797745?mt=8">
+    <meta name="smartbanner:button-url-google" content="https://play.google.com/store/apps/details?id=br.com.portaldeassinaturas.hybrid">
+    <meta name="smartbanner:enabled-platforms" content="android,ios">
+    <!-- End smartBanner configuration -->
+    }
+
+    <meta name="title" content="@Umbraco.Field("seoTitle", altFieldAlias:"pageName") | @site.siteTitle">
+    <meta name="description" content="@Umbraco.Field("seoDescription")">
+    <title>@Umbraco.Field("seoTitle", altFieldAlias:"pageName") | @site.siteTitle</title>
+    <link href="//@hostName/Content/bootstrap/bootstrap" rel="stylesheet">
+    <link href="//@hostName/Content/themes/shared/fonts/font-awesome/css/css" rel="stylesheet">
+    <link href="//@hostName/Content/themes/shared/css" rel="stylesheet">
+    <link href="//@hostName/Content/themes/b2b/css" rel="stylesheet">
+    <link href="/site/templatecss" rel="stylesheet">
+    <link href="/site/css/rte.css" rel="stylesheet">
+
+    <link rel="canonical" href="http://@hostName/Site/">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script async="" src="//www.google-analytics.com/analytics.js"></script><script async="" src="//www.google-analytics.com/analytics.js"></script><script type="text/javascript" src="//@hostName/scripts/css3-mediaqueries.js"></script>
+    <!--[if lt IE 9]>
+    <script src="//@hostName/scripts/html5shiv.js" type="text/javascript"></script>
+    <script src="//@hostName/scripts/respond.js" type="text/javascript"></script>
+    <![endif]-->
+    <script src="//@hostName/bundles/mixpanel"></script>
+    <script type="text/javascript">
+        mixpanel.track_links("#link-experimentar", "Header - Experimentar");
+        mixpanel.track_links("#link-acessarminhaconta", "Header - Acessar minha conta");
+        mixpanel.track_links("#link-verificar", "Menu (Deslogado) - Verificar assinaturas de um documento");
+    </script>
+</head>
+<body class="home-page ng-isolate-scope" ng-intro-autorefresh="true" ng-intro-options="TourOptions" ng-intro-method="StartTour" ng-intro-exit-method="ExitTour" ng-intro-oncomplete="TourCompletedEvent" ng-intro-onexit="TourExitEvent" ng-intro-onchange="TourChangeEvent">
+    <!-- Fixed navbar -->
+    <div id="header" class="navbar navbar-default navbar-fixed-top header">
+        <div class="container" ng-controller="MasterController" style="background-position: -666px 0px;">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                <a class="logo" href="/">Site ZF</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav top-menu">
+                    <li class="dropdown-submenu item0">
+                        <!-- ngIf: !Logins.ShowLogins -->
+                        <!-- ngIf: Logins.ShowLogins --><a ng-if="Logins.ShowLogins" class="dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown" analytics-on="" analytics-event="header" analytics-category="public-area" analytics-label="acess-my-account-dropdown"><i class="fa fa-user-circle-o fa-fw"></i> Acessar minha conta</a><!-- end ngIf: Logins.ShowLogins -->
+                        <ul class="dropdown-menu pull-right" role="menu">
+                            <li><a href="/Home/Login" analytics-on="" analytics-event="header" analytics-category="public-area" analytics-label="acess-by-cerficate">Certificado digital</a></li>
+                            <li><!-- ngIf: Logins.email --><a ng-if="Logins.email" href="/Home/LoginEmailSenha" analytics-on="" analytics-event="header" analytics-category="public-area" analytics-label="acess-by-email">E-mail</a><!-- end ngIf: Logins.email --></li>
+                            <li><!-- ngIf: Logins.mobileId --><a ng-if="Logins.mobileId" href="/Home/LoginMobileId" analytics-on="" analytics-event="header" analytics-category="public-area" analytics-label="acess-by-mobileId">mobileID</a><!-- end ngIf: Logins.mobileId --></li>
+                        </ul>
+                    </li>
+                    <li class="item1"><!-- ngIf: EnableEmailRegister || EnableCertificateRegister --><a href="/Home/Cadastro" ng-if="EnableEmailRegister || EnableCertificateRegister" id="link-experimentar" analytics-on="" analytics-event="header" analytics-category="public-area" analytics-label="try-button"><span ng-bind="trySubscription" class="ng-binding">Cadastre-se</span></a><!-- end ngIf: EnableEmailRegister || EnableCertificateRegister --></li>
+                    <li class="item2"><a href="/VerificadorAssinaturas/Sobre" id="link-verificar" analytics-on="" analytics-event="header" analytics-category="public-area" analytics-label="verify-document-signatures">Verificar assinaturas de um documento</a></li>
+                </ul>
+                <hr class="visible-xs">
+                <ul class="nav navbar-nav main-menu"></ul>
+                <hr class="visible-xs">
+                <ul class="nav navbar-nav tools">
+                    <li class="help"><a class="icon" href="/Info/Contato" title="Contato" analytics-on="" analytics-event="header" analytics-category="public-area" analytics-label="help-button"><i class="fa fa-fw fa-question"></i> <span>Contato</span></a></li>
+                </ul>
+
+            </div>
+            <!--/.nav-collapse -->
+            @if(site.showHeaderCertisignLogo){
+            <div class="certisign hidden-xs hidden-sm">Certisign</div>
+            }
+        </div>
+    </div>
+    <div id="content">
+        @RenderBody()
+    </div>
+    <div id="prefooter">
+        <div class="container">
+            <ul class="nav navbar-nav links">                
+                <li><a href="/Info/Contato">Fale conosco</a></li>
+                <li><a href="/Info/PerguntasFrequentes">Perguntas frequentes</a></li>
+                <li><a href="/Info/PoliticaPrivacidade">Política de privacidade</a></li>
+                <li><a href="/Info/TermosDeUso">Termos de Uso</a></li>               
+            </ul>
+            <div class="powered"><span class="hidden-xs">Powered by</span> Certisign</div>
+        </div>
+    </div>
+    <!-- /prefooter -->
+    <div id="footer">
+        <div class="container">
+            <ul id="logos" class="nav nav-pills pull-left">
+                <li class="icp"><a href="javascript:void(0)">ICP Brasil</a></li>
+                <li class="siteseguro"><a href="javascript:vopenw()">Site Seguro Certisign</a></li>
+            </ul>
+            <p class="company-info text-right pull-right">
+                @Umbraco.Field("companyInfo")
+            </p>
+        </div>
+    </div>
+    <!-- /footer -->
+    <script src="//@hostName/bundles/modernizr"></script>
+    <!--[if lt IE 9]>
+    <script src="//@hostName/bundles/jquery-1_11_0"></script>
+    <script src="//@hostName/bundles/upload-es5"></script>
+    <![endif]-->
+    <!--[if gte IE 9]><!-->
+    <script src="//@hostName/bundles/jquery-2_0_3"></script>
+    <!--<![endif]-->
+    <script src="//@hostName/bundles/spin"></script>
+    <script src="//@hostName/bundles/angular"></script>
+    <script src="//@hostName/bundles/upload"></script>
+    <script src="//@hostName/bundles/bootstrap"></script>
+    <script src="//@hostName/bundles/uiBootstrap"></script>
+    <script src="//@hostName/bundles/shared/jqueryplugins"></script>
+    <script src="//@hostName/bundles/shared/jqueryplugins_pt-BR"></script>
+    <script src="//@hostName/bundles/recaptcha"></script>
+    <script src="//@hostName/bundles/smartbanner"></script>
+    <script src="//@hostName/bundles/underscorejs"></script>
+    <script src="//@hostName/bundles/b2b/jqueryplugins"></script>
+    <script src="//@hostName/bundles/angular-locale_pt-br"></script>
+    <script src="//@hostName/bundles/bootstrap-datepicker_pt-BR"></script>
+    
+    <script type="text/javascript">
+    $(document).ready(function() {
+        Portal.Header();
+        Portal.Notifications();
+        Portal.ChangeBootstrapBehavior();
+        $('.video').responsiveVideo();
+    });
+    </script>
+    <script src="//@hostName/bundles/angulartics"></script>
+    <script src="//@hostName/bundles/jstz"></script>
+    <script src="//@hostName/bundles/jstz_pt-BR"></script>
+    <script src="//@hostName/bundles/master"></script>
+    <script src="//@hostName/bundles/master_pt-BR"></script>
+    
+    <script src="//@hostName/bundles/home"></script>
+    <script src="//@hostName/bundles/home_pt-BR"></script>
+    <script src="//@hostName/bundles/solicitarMaisDocumentosDialog"></script>
+    <script src="//@hostName/bundles/solicitarMaisDocumentosDialog_pt-BR"></script>
+    <script type="text/javascript">
+    function goToCadastro(local) {
+        mixpanel.track("Home - Experimente agora - " + local);
+        window.location.href = '/Home/Cadastro';
+    }
+    </script>
+    <script src="//@hostName/bundles/youtube-lazyload"></script>
+</body>
+</html>

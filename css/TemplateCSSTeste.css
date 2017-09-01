@@ -1,0 +1,415 @@
+#header {
+	background-color: burlywood !important;
+}
+
+
+/* LINKS DAS IMAGENS DENTRO DO TEMA */
+.list-styled li,
+.signature-models li {
+    background-image: url(../../Content/themes/assinaseg/images/ico_bullet1.png);
+}
+#header,
+#header .container {
+	background-image: url(../../Content/themes/assinaseg/images/bg_header.gif);
+}
+#highlight {
+	background-image: url(../../Content/themes/assinaseg/images/bg_highlight.png);
+}
+.spr-icons,
+#useful .item .icon,
+#questions .icon,
+.containerEnviarAssinatura .thumb .imagem {
+    background-image: url(../../Content/themes/assinaseg/images/spr_icons.png);
+}
+
+.content-page .main-menu a:before {
+    color: #2A3891;
+}
+.content-page .main-menu .item0 a:before {content: "\f07c"; font-size: 30px;}
+.content-page .main-menu .item1 a:before {content: "\f055";font-size: 26px;}
+.content-page .main-menu .item2 a:before { content: "\f15c"; font-size: 23px;}
+.content-page .main-menu .item3 a:before {content: "\f155";font-size: 23px;}
+.content-page .main-menu .item3 a:after{content:none;}
+.content-page .main-menu .item2 a:after{
+    font-family: FontAwesome;
+    content: "\f002";
+    font-size: 14px;
+    position: absolute;
+    margin: -22px 0 0 -22px;
+    text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+    color: #2A3891;
+}
+
+#header .tools .icon {
+    background: #ffffff;
+}
+    #header .tools .icon i {
+        color: #2A3891;
+    }
+
+#content #highlight h2 {
+    background-image: url(../../Content/themes/assinaseg/images/tit_assinedocumentos_pt.png);
+}
+#useful {
+    background-image: url(../../Content/themes/assinaseg/images/bg_useful.png);    
+}
+    #useful .type1 .icon:before {
+        font-family: FontAwesome;
+        content: "";
+        font-size: 75px;
+        display: block;
+    }
+    #useful .type2 .icon:before {
+        font-family: FontAwesome;
+        content: "";
+        font-size: 75px;
+        display: block;
+    }
+    #useful .type3 .icon:before {
+        font-family: FontAwesome;
+        content: "";
+        font-size: 75px;
+        display: block;
+    }
+    #useful .type4 .icon:before {
+        font-family: FontAwesome;
+        content: "";
+        font-size: 75px;
+        display: block;
+    }
+@media (max-width: 767px) {
+    #prefooter ul.links li a {
+        background-image: url(../../Content/themes/assinaseg/images/ico_bullet2.png);
+    }
+}
+
+
+
+
+/* GENERAL FONT STYLING */
+#content h2 {    
+    color: #2A3891;
+}
+#content h3 {    
+    color: #2A3891;
+}
+#content h4 {    
+    color: #2A3891;
+}
+.btn-default {
+    background-color: #fafafa;
+}
+
+/* MOBILE SPECIFIC */
+@media (max-width: 767px) {
+	#header .container {
+        background-image: none;
+		background-color: #F6F6F6;
+        height: 53px!important;
+	}
+	#header .navbar-collapse .navbar-nav > li > a {            
+		color: #363435;
+	}
+}
+
+#header.navbar-default .navbar-toggle {
+    background-color: #2A3891;
+    border-color: #2A3891;
+    margin: 15px 10px 0 0;
+}
+    #header.navbar-default .navbar-toggle .icon-bar {
+        background-color: #FFF;
+    }
+    #header.navbar-default .navbar-toggle:hover,
+	#header.navbar-default .navbar-toggle:focus {
+		background-color: #0098C0;
+	}
+	@media (max-width: 767px) {
+		#header .logo {
+			top: 5px!important;
+			left: 6px!important;
+			width: 218px!important;
+			height: 45px!important;
+			background: transparent url(../../Content/themes/assinaseg/images/img_logoportal_mobile.png) no-repeat 0 0!important;
+		}
+	}
+
+
+/* HEADER AND MAIN MENU */
+body {
+    padding-top: 138px;
+}
+#header .logo {
+	top: 21px;
+	left: 16px;
+	width: 167px;
+	height: 106px;
+	background: transparent url(../../Content/themes/assinaseg/images/img_logoportal.png) no-repeat 0 0;
+}
+#header {
+    border-bottom-color: #BCD531;
+    border-bottom-width: 3px;
+    background-color: #FFF;
+}
+#header .navbar-header {
+    height: 56px;
+}
+#header .container {
+    height: 138px;
+}
+#header .main-menu {
+    left: 225px;
+    top: 52px;
+}
+
+.main-menu.navbar-nav > li > a {
+    color: #2A3891;
+}
+.navbar-default .top-menu.navbar-nav > .item0 a { color: #fff; }
+.navbar-default .top-menu.navbar-nav > .item1 a { color: #BBD431; }
+.navbar-default .top-menu.navbar-nav > .item2 a { color: #6DBEDF; }
+
+
+/* HOME */
+#content .content-strip h2 strong {
+    border-bottom-color: #BCD531;
+}
+    /* HIGHLIGHT */
+    #content #highlight h2 {
+        color: #2A3891;
+        -webkit-filter: drop-shadow(0 2px 2px rgba(0,0,0,0));
+	    -moz-filter: drop-shadow(0 2px 2px rgba(0,0,0, 0));
+	    -ms-filter: drop-shadow(0 2px 2px rgba(0,0,0, 0));
+	    -o-filter: drop-shadow(0 2px 2px rgba(0,0,0, 0));
+	    filter: drop-shadow(0 2px 2px rgba(0,0,0, 0));
+    }
+    #highlight {
+        background-color: #FCFBE9;
+        background-position: -30px -47px;
+    }
+    #highlight div.description,
+    .home-page #content .content-strip h2 {
+        color: #2A3891;
+    }
+
+    /* COMO FUNCIONA */
+    .home-page #how .item .icon {
+        background-color: #94C94B;
+    }
+    .home-page #how h2 strong {
+        
+    }
+    .home-page #how .item h3 {
+        color: #353334;
+    }
+    .home-page #how .item hr {
+        border-top: 1px dotted #131415;
+    }
+
+    /* SERVE PARA O MEU CASO */
+    .home-page #content #useful {
+        background-color: #3A843D;
+    }
+    .home-page #content #useful p.description {
+        font-size: 18px;
+    }
+    .home-page #content #useful,
+    .home-page #content #useful h2 {
+        color: #fff;
+    }
+    .home-page #useful .item hr {
+        border-top-color: #343333;
+    }
+    .home-page #useful .item li {
+        color: #fff;
+        font-size: 14px;
+    }
+    .home-page #useful .item li:before {
+        content: '\b7\a0';
+    }
+    #useful .item .icon {
+        height: 60px;
+    }
+    .home-page  #useful .type1 .icon { background-position: 27px -145px; }
+    .home-page  #useful .type2 .icon { background-position: -120px -145px }
+    .home-page  #useful .type3 .icon { background-position: -268px -140px; }
+    .home-page  #useful .type4 .icon { background-position: -429px -140px;}
+
+    /* POR QUE USAR */
+    .home-page #benefits h2 strong {
+        
+    }
+    .home-page #benefits .item h3 {
+        color: #0098BF;
+    }
+    .home-page #benefits p.subdescription {
+        color: #363435;
+    }
+    .home-page #benefits p.subdescription span {
+        border-bottom-color: #E7E3E3;
+    }
+
+    #benefits .icon {
+        border: 4px solid #94C94B;
+    }
+
+    #benefits .icon i {
+        color: #94C94B;
+    }
+
+    /* QUANTO CUSTA */
+    .home-page #pricing {
+        background-color: #EEE;
+    }
+    .home-page #pricing .item .card {
+        background-color: #075738;
+    }
+    .home-page #pricing .item .card .middle {
+        color: #353334;
+    }
+
+    /* AINDA COM DUVIDAS */
+    .home-page #questions {
+        margin-bottom: -30px;
+        background-color: #fff;
+    }
+    .home-page #questions .item a {
+        color: #363435;
+        background-color: #CCC;
+        font-size: 18px;
+    }
+    #questions .question1 .icon {
+        background-position: -141px -430px;
+    }
+
+/* CONTENT */
+.welcome {	
+	color: #363435;	
+}
+    .welcome strong {
+        border-bottom-color: #BCD531;
+    }
+#content .breadcrumb {
+    background-color: #999;
+}
+.widget h5 {
+    color: #363435;
+}
+.widget.color1 > .panel-heading { background: #BCD531; filter: none; }
+    .widget.color1 > .panel-heading h4.panel-title { color: #666!important;}
+
+.widget.color2 > .panel-heading { background: #94C94B; filter: none; }
+    .widget.color2 > .panel-heading h4.panel-title { color: #666!important; }
+
+.widget.color3 > .panel-heading { background: #2A3891; filter: none; }
+    .widget.color3 > .panel-heading h4.panel-title { color: #fff!important; }    
+    .widget.color3 > .panel-heading .widget-close { background-position: -40px 0; }
+    .widget.color3.panel.toggle > .panel-heading .widget-close { background-position: 0 0; }
+		
+.widget.color4 > .panel-heading { background: #6EBEE0; filter: none; }
+    .widget.color4 > .panel-heading h4.panel-title { color: #FFF!important; }	
+		
+.widget.color5 > .panel-heading { background: #0098C0; filter: none; }
+    .widget.color5 > .panel-heading h4.panel-title { color: #FFF!important; }	
+		
+.widget.color6 > .panel-heading { background: #3A843D; filter: none; }
+    .widget.color6 > .panel-heading h4.panel-title { color: #FFF!important; }	
+		
+.widget.color7 > .panel-heading { background: #0054A1; filter: none; }
+    .widget.color7 > .panel-heading h4.panel-title { color: #FFF!important; }	
+
+    /* MEUS DOCUMENTOS */
+    .my_documents .well-header {
+        background-color: #075738;
+    }
+
+    /* MEUS CREDITOS */
+    #funds .account .header:before {
+        color: #00849A;
+    }
+
+    /* NOVO DOCUMENTO */    
+    .participante .papel .toggler {
+        background-color: #00A85A;
+    }
+    .participante .icon {
+        background-color: #363435;
+    }
+    .participante .papel strong,
+    .participante .papel .icon {
+        color: #363435;
+    }
+    #novodocumento .option .row .col-md-2 i {
+        color: #0098C0;
+    }
+
+
+/* FOOTER */
+#prefooter {
+    background: #94C94B;
+}
+#prefooter .links li {
+    border-left-color: #353334;
+}
+#prefooter,
+#prefooter .links a,
+#prefooter .powered > span {
+    color: #353334;
+}
+
+#footer #logos a {
+    height: 52px;
+}
+#footer #logos .icp {
+    width: 42px;
+    height: 52px;
+    background: url(../../Content/themes/assinaseg/images/img_logoicp.png) no-repeat 0 0;
+    background-position: center;
+    display: block;
+    text-indent: -9999px;
+}
+#footer #logos .ac-sincor {
+    width: 92px;
+    height: 52px;
+    background: url(../../Content/themes/assinaseg/images/img_logoacsincor.png) no-repeat 0 0;
+    background-position: center;
+    display: block;
+    text-indent: -9999px;
+}
+
+#footer #logos .sincor-sp {
+	width: 114px;
+    height: 52px;
+    background: transparent url(../../Content/themes/assinaseg/images/img_logosincorsp.png) no-repeat 0 0;
+    background-position: center;
+    display: block;
+    text-indent: -9999px;
+}
+
+#footer #logos .sincor-sc {
+	width: 96px;
+    height: 52px;
+    background: transparent url(../../Content/themes/assinaseg/images/img_logosincorsc.png) no-repeat 0 0;
+    background-position: center;
+    display: block;
+    text-indent: -9999px;
+}
+#footer #logos .sincor-rj {
+	width: 100px;
+    height: 52px;
+    background: transparent url(../../Content/themes/assinaseg/images/img_logosincorrj.png) no-repeat 0 0;
+    background-position: center;
+    display: block;
+    text-indent: -9999px;
+}
+#footer #logos .fenacor {
+	width: 96px;
+    height: 52px;
+    background: transparent url(../../Content/themes/assinaseg/images/img_logofenacor.png) no-repeat 0 0;
+    background-position: center;
+    display: block;
+    text-indent: -9999px;
+}
+#footer #logos.nav-pills>li+li {
+    margin-left: 19px;
+}

@@ -1,0 +1,94 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Template.cshtml";
+    var site = @CurrentPage.Site();
+    Response.ContentType = "text/css";
+}
+/* START - CSS THEME - UMBRACO */
+
+/* HEADER */
+#header { border-top-color:@site.headerBorderTopColor; border-bottom-color: @site.headerBorderBottomColor; }
+#header, #header .container { background-color: @site.headerBackgroundColor; }
+#header .logo { 
+    background-image: url(@site.siteLogo.Url);
+    width: @(site.siteLogo.UmbracoWidth)px;
+    height: @(site.siteLogo.UmbracoHeight)px;
+}
+
+/* PREFOOTER */
+#prefooter { background-color: @site.preFooterBackgroundColor; }
+#prefooter, #prefooter .links a { color: @site.preFooterLinkColor; }
+#prefooter .powered > span { color: @site.preFooterTextColor; }
+#prefooter .links li { border-color: @site.preFooterTextColor; }
+
+/* FOOTER */
+#footer { color: @site.footerTextColor; background-color: @site.footerBackgroundColor; }
+#footer .company-info { white-space: pre-line; }
+
+/* FONTS - MAIN MENU */
+#header .main-menu.navbar-nav > li > a { color: @site.headerLoginMenuLinkColor; }
+#header .main-menu a:before, #header .main-menu a:after { color: @site.HeaderMenuLinkColor; }
+#header .tools .icon { background-color: @site.headerLoginMenuLinkColor; }
+
+/* FONTS - TOP MENU */
+#header .top-menu a { color: @site.headerLoginMenuLinkColor; }
+#header .top-menu > li { border-color: @site.HeaderMenuLinkColor; }
+#header .top-menu > .item2 a { color: @site.HeaderMenuLinkColor; }
+
+/* FONTS - BODY*/
+body, #content p, #footer { color: @site.textColor; }
+
+/* FONTS - TITLES */
+#content .welcome, #content p.welcome, #content .content-page .container > h1 { color: @site.textColor; }
+#content h2 { color: @site.textColor; }
+#content h3 { color: @site.textColor; }
+#content .widget h5 { color: @site.textColor; }
+
+/* COLOR SCHEME - ACCENTS */
+
+    /* ACCENT 1 */    
+    #content .color-accent-1.widget > .panel-heading { background-color: @site.textColor; }
+    #content .color-accent-1.widget > .panel-heading *, #content .color-accent-1.widget > .panel-heading h4.panel-title { color: @site.textColor; }
+
+    /* ACCENT 2 */    
+    #content .color-accent-2.widget > .panel-heading { background-color: @site.textColor; }
+    #content .color-accent-2.widget > .panel-heading *, #content .color-accent-2.widget > .panel-heading h4.panel-title { color: @site.textColor; }
+
+    /* ACCENT 3 */
+    #content .color-accent-3 .icon:before, .content-page #content .list-styled li:before { color: @site.textColor; }
+    #content .color-accent-3.breadcrumb { background-color: @site.textColor; }
+
+/* MOBILE */
+@@media screen and (max-width: 767px) {
+    #header.navbar .logo { }
+}
+
+/* HOME */
+#content #highlight{
+    brackground-color: @site.contentBackground;
+}
+
+#content #highlight  * {
+    color: @site.contentColor;
+    font-size: 14px;
+}
+#content #highlight ul{
+    padding-left: 0;
+    list-style: none;
+}
+#content #highlight ul li{
+    position: relative;
+    padding: 0 0 10px 18px;
+    line-height: 18px;
+    list-style: none;
+}
+#content #highlight ul li:before {
+    font-family: FontAwesome;
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 3px;
+    font-size: 11px;
+}
+
+/* END - CSS THEME - UMBRACO */

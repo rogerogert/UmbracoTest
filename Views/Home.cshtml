@@ -1,0 +1,7 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Master.cshtml";
+}
+<div id="highlight" class="content-strip" style="background-color:@Umbraco.Field("contentBackground");">
+    @Html.GetGridHtml(Model.Content, "content")
+</div>
